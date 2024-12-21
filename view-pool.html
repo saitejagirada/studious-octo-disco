@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Pool Details</title>
+    <link rel="stylesheet" href="view-pool.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pool-details">
+            <!-- Pool Header -->
+            <div class="pool-header">
+                <h1 id="projectTitle">Loading...</h1>
+                <div class="pool-meta">
+                    <span class="pool-type" id="poolType">Loading...</span>
+                    <span class="budget">₹<span id="projectBudget">0</span></span>
+                </div>
+            </div>
+
+            <!-- Route Section -->
+            <div class="route-section">
+                <h3>Route Details</h3>
+                <div class="route-details">
+                    <div class="location-point">
+                        <h4>Pickup Location</h4>
+                        <p id="pickupLocation">Loading...</p>
+                    </div>
+                    <div class="location-point">
+                        <h4>Drop Location</h4>
+                        <p id="dropLocation">Loading...</p>
+                    </div>
+                </div>
+                <div id="routeMap" class="map-container">
+                    <div class="map-loading">Loading map...</div>
+                </div>
+            </div>
+
+            <!-- Description Section -->
+            <div class="pool-description">
+                <h3>Description</h3>
+                <p id="projectDescription">Loading...</p>
+            </div>
+
+            <!-- Pool Status -->
+            <div class="pool-status">
+                <h3>Pool Status</h3>
+                <div class="status-info">
+                    <div class="status-item">
+                        <span>Available Slots</span>
+                        <span class="seeder-count">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Accepted Seeders</span>
+                        <span class="accepted-count">0</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Join Requests Section (Only visible to pool creator) -->
+            <div id="joinRequestsSection" class="join-requests" style="display: none;">
+                <h3>Join Requests</h3>
+                <div id="pendingRequests" class="requests-list">
+                    <div class="no-requests-message">No pending requests</div>
+                </div>
+            </div>
+
+            <!-- Accepted Seeders Section -->
+            <div class="seeders-section">
+                <h3>Accepted Seeders</h3>
+                <div id="acceptedSeeders" class="accepted-seeders">
+                    <div class="no-seeders-message">No seeders have joined this pool yet.</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pool-actions">
+                <button id="joinPool" class="primary-button">Join Pool</button>
+                <button id="sharePool" class="secondary-button">Share Pool</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load view-pool.js first -->
+    <script src="view-pool.js"></script>
+    <!-- Then load Google Maps with callback -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap" async defer></script>
+</body>
+</html> 
